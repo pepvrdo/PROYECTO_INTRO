@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información sobre Crisis de Pánico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .info {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Crisis de Pánico</h1>
+<p>Haz clic en el botón para saber más sobre las crisis de pánico.</p>
+<button onclick="toggleInfo()">Saber más</button>
+
+<p><a href="#info">Ir directamente a la información</a></p>
+
+<div class="info" id="info">
+    <h2>¿Qué son las crisis de pánico?</h2>
+    <p>
+        Son episodios súbitos de miedo intenso o incomodidad extrema, que alcanzan su punto máximo en pocos minutos y suelen incluir síntomas como palpitaciones, sudoración, dificultad para respirar, mareos y una sensación de pérdida de control o muerte inminente. Aunque son intensas, no suelen ser peligrosas físicamente.
+    </p>
+    <h2>Factores influyentes</h2>
+    <ul>
+        <li><strong>Biológicos:</strong> Desbalances químicos en el cerebro, especialmente en neurotransmisores como la serotonina.</li>
+        <li><strong>Genéticos:</strong> Tendencia hereditaria a trastornos de ansiedad.</li>
+        <li><strong>Psicológicos:</strong> Experiencias traumáticas, estrés crónico o predisposición a pensamientos negativos.</li>
+        <li><strong>Estilo de vida:</strong> Consumo de cafeína, alcohol o drogas, y falta de sueño.</li>
+    </ul>
+    <h2>¿Cómo ayudar?</h2>
+    <ul>
+        <li><strong>En el momento:</strong> Mantener la calma, hablar con tono tranquilizador y guiar a la persona para que respire lenta y profundamente.</li>
+        <li><strong>Apoyo a largo plazo:</strong> Animar a buscar ayuda profesional (terapia cognitivo-conductual o medicación, si es necesario).</li>
+        <li><strong>Entorno positivo:</strong> Reducir factores estresantes, fomentar el ejercicio y hábitos saludables.</li>
+        <li><strong>Educación:</strong> Informarse sobre las crisis para empatizar y evitar juicios o presiones innecesarias.</li>
+    </ul>
+</div>
+
+<script>
+    function toggleInfo() {
+        const info = document.getElementById("info");
+        if (info.style.display === "none" || info.style.display === "") {
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
