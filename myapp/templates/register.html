@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse en MindZen</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon-48x48.png' %}">
+    <style>
+        body {
+            background-image: url(https://static.vecteezy.com/system/resources/previews/008/324/581/non_2x/abstract-water-color-pastel-color-background-free-vector.jpg);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px 0;
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            background-color: #12128a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+        .success {
+            color: green;
+            margin-bottom: 10px;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <h2>Registrarse</h2>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            {{ form.as_p }}
+            <button type="submit">Registrarse</button>
+        </form>
+        <div class="login-link">
+            <p>¿Ya tienes una cuenta?</p>
+            <a href="{% url 'login' %}"><button>Iniciar Sesión</button></a>
+        </div>
+    </div>
+</body>
+</html>
