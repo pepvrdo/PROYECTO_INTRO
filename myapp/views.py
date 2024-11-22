@@ -114,4 +114,7 @@ def download_qr(request):
     response.write(img_io.getvalue())
     
     return response
+def info(request):
+    return render(request, "info.html")
+
 

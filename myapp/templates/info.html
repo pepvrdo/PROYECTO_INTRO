@@ -1,75 +1,94 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información sobre Crisis de Pánico</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        .info {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+{% extends "layouts/base.html" %}
+{% block content %}
 
-<h1>Crisis de Pánico</h1>
-<p>Haz clic en el botón para saber más sobre las crisis de pánico.</p>
-<button onclick="toggleInfo()">Saber más</button>
+<style>
+    /* Estilo general para el contenido del blog */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.8;
+        background-color: #f5f5f5;
+    }
 
-<p><a href="#info">Ir directamente a la información</a></p>
+    .blog-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-<div class="info" id="info">
-    <h2>¿Qué son las crisis de pánico?</h2>
-    <p>
-        Son episodios súbitos de miedo intenso o incomodidad extrema, que alcanzan su punto máximo en pocos minutos y suelen incluir síntomas como palpitaciones, sudoración, dificultad para respirar, mareos y una sensación de pérdida de control o muerte inminente. Aunque son intensas, no suelen ser peligrosas físicamente.
-    </p>
-    <h2>Factores influyentes</h2>
-    <ul>
-        <li><strong>Biológicos:</strong> Desbalances químicos en el cerebro, especialmente en neurotransmisores como la serotonina.</li>
-        <li><strong>Genéticos:</strong> Tendencia hereditaria a trastornos de ansiedad.</li>
-        <li><strong>Psicológicos:</strong> Experiencias traumáticas, estrés crónico o predisposición a pensamientos negativos.</li>
-        <li><strong>Estilo de vida:</strong> Consumo de cafeína, alcohol o drogas, y falta de sueño.</li>
-    </ul>
-    <h2>¿Cómo ayudar?</h2>
-    <ul>
-        <li><strong>En el momento:</strong> Mantener la calma, hablar con tono tranquilizador y guiar a la persona para que respire lenta y profundamente.</li>
-        <li><strong>Apoyo a largo plazo:</strong> Animar a buscar ayuda profesional (terapia cognitivo-conductual o medicación, si es necesario).</li>
-        <li><strong>Entorno positivo:</strong> Reducir factores estresantes, fomentar el ejercicio y hábitos saludables.</li>
-        <li><strong>Educación:</strong> Informarse sobre las crisis para empatizar y evitar juicios o presiones innecesarias.</li>
-    </ul>
+    .blog-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+        text-align: center;
+    }
+
+    .blog-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #666;
+        text-align: center;
+    }
+
+    .blog-content p {
+        margin-bottom: 15px;
+        color: #444;
+    }
+
+    .blog-content ul {
+        margin: 15px 0;
+        padding-left: 20px;
+        color: #444;
+    }
+
+    .blog-content ul li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="blog-container">
+    <h1 class="blog-title">Entendiendo las Crisis de Pánico</h1>
+    <h2 class="blog-subtitle">Una mirada a sus causas, síntomas y cómo afrontarlas</h2>
+
+    <div class="blog-content">
+        <p>
+            Las crisis de pánico son experiencias abrumadoras que pueden aparecer de manera inesperada, causando un miedo intenso y una sensación de pérdida de control. Estas crisis alcanzan su punto máximo en pocos minutos y pueden incluir síntomas como palpitaciones, sudoración excesiva, mareos y una dificultad notable para respirar.
+        </p>
+        <p>
+            Aunque estas experiencias son intensas, es importante recordar que no suelen ser físicamente peligrosas. Sin embargo, pueden afectar profundamente la calidad de vida de quienes las padecen, especialmente si no se comprenden o no se manejan adecuadamente.
+        </p>
+
+        <h3>¿Qué puede desencadenarlas?</h3>
+        <p>
+            Existen diversos factores que pueden influir en la aparición de las crisis de pánico, algunos de los cuales están relacionados con aspectos biológicos, psicológicos y del estilo de vida. Aquí te presentamos los principales:
+        </p>
+        <ul>
+            <li><strong>Biológicos:</strong> Alteraciones en los neurotransmisores del cerebro, como la serotonina, que juegan un papel clave en el estado de ánimo y la ansiedad.</li>
+            <li><strong>Genéticos:</strong> Una predisposición hereditaria a sufrir trastornos de ansiedad.</li>
+            <li><strong>Psicológicos:</strong> Experiencias traumáticas, estrés constante o patrones de pensamiento negativos.</li>
+            <li><strong>Estilo de vida:</strong> Factores como el consumo excesivo de cafeína, alcohol o drogas, y la falta de sueño también pueden ser determinantes.</li>
+        </ul>
+
+        <h3>Cómo afrontar una crisis de pánico</h3>
+        <p>
+            Cuando alguien atraviesa una crisis de pánico, es fundamental actuar con empatía y calma. Aquí hay algunas estrategias que pueden ayudar en el momento y a largo plazo:
+        </p>
+        <ul>
+            <li><strong>Durante la crisis:</strong> Mantén un tono de voz calmado y tranquilizador. Anima a la persona a concentrarse en su respiración, inhalando lenta y profundamente.</li>
+            <li><strong>A largo plazo:</strong> Fomenta hábitos saludables como el ejercicio regular, una dieta equilibrada y técnicas de relajación. Además, buscar terapia profesional puede ser crucial.</li>
+            <li><strong>Entorno de apoyo:</strong> Crear un ambiente donde la persona se sienta comprendida y libre de juicios es esencial para su recuperación.</li>
+        </ul>
+
+        <p>
+            Comprender las crisis de pánico es el primer paso para enfrentarlas de manera efectiva. Con apoyo, educación y las herramientas adecuadas, es posible recuperar el control y vivir una vida plena.
+        </p>
+    </div>
 </div>
 
-<script>
-    function toggleInfo() {
-        const info = document.getElementById("info");
-        if (info.style.display === "none" || info.style.display === "") {
-            info.style.display = "block";
-        } else {
-            info.style.display = "none";
-        }
-    }
-</script>
+{% endblock %}
 
-</body>
-</html>
+
