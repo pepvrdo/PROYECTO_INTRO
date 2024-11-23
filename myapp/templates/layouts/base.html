@@ -58,6 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'saber_mas' %}">Saber Más</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tutorial' %}">Tutorial</a> <!-- Botón agregado -->
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}">Configurar botón</a>
@@ -77,6 +80,7 @@
             </div>
         </div>
     </nav>
+    
 
     <main>
         {% block content %}
@@ -150,4 +154,4 @@
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
-   
+
