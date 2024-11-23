@@ -17,4 +17,5 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('profile/edit/', views.edit_profile, name='edit_profile'),
     path('download-qr/', views.download_qr, name='download_qr'),
+    path("saber_mas/", views.info, name="saber_mas" ),
 ]

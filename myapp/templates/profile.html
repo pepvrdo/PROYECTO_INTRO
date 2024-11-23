@@ -11,36 +11,82 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            padding: 2rem;
+            padding-top: 56px;
         }
         .profile-container {
             background-color: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 2rem;
         }
-        .qr-code {
-            margin-top: 1rem;
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+        .container {
+            max-width: 100% ;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 5%;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        profile-info {
+            padding-right: 2 rem;
+        }
+        .qr-section {
             text-align: center;
+            padding: 2 rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            height: 100%;
+        }
+        @media (max-width: 768px) {
+            .profile-grid{
+                grid-template-columns: 1fr;
+            }
+            .profile-info{
+                padding-right: 0;
+            }
+        }
+        @media(min-width: 992px){
+            .container{
+                max-width: 960px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile-container">
-            <h1>Perfil de {{ perfil.user.username }}</h1>
-            <p><strong>Nombre:</strong> {{ perfil.name }}</p>
-            <p><strong>Apellido:</strong> {{ perfil.apellido }}</p>
-            <p><strong>Contacto de emergencia:</strong> {{ perfil.contacto }}</p>
-            <p><strong>Número de contacto:</strong> {{ perfil.num_contacto }}</p>
-            <p><strong>Mensaje de ayuda:</strong> {{ perfil.texto }}</p>
-            <div class="qr-code">
-                <h2>Descarga tu Código QR</h2>
-                <br>
-                <a href="{% url 'download_qr' %}" class="btn btn-success mt-3">Descargar QR</a>
+            <div class="profile-grid">
+                <div class="profile-info">
+                    <h1>Perfil de {{ perfil.user.username }}</h1>
+                    <p><strong>Nombre:</strong> {{ perfil.nombre }}</p>
+                    <p><strong>Apellido:</strong> {{ perfil.apellido }}</p>
+                    <p><strong>Contacto de emergencia:</strong> {{ perfil.contacto }}</p>
+                    <p><strong>Número de contacto:</strong> {{ perfil.num_contacto }}</p>
+                    <p><strong>Mensaje de ayuda:</strong> {{ perfil.texto }}</p>
+                    <div class="mt-4">
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Editar Perfil</a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a>
+                    </div>
+                </div>
             </div>
-            <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-3">Editar Perfil</a>
-            <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Volver a Inicio</a>
+            <div class="qr-section">
+                <h2>Descarga tu Código QR</h2>
+                <div class="mt-4">
+                    <a href="{% url 'download_qr' %}" class="btn btn-success">Descargar QR</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
