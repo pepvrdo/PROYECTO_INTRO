@@ -30,17 +30,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 40px; /* Pequeña separación adicional debajo de la barra */
         }
         .main-content {
             flex-grow: 1;
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
-            padding: 2rem;
+            flex-direction: column;
+            justify-content: center; /* Centra verticalmente los botones */
+            align-items: center; /* Centra horizontalmente los botones */
+            padding-top: 120px; /* Aumenta la separación desde la barra azul */
+            padding-bottom: 120px; /* Aumenta la separación hacia la parte blanca inferior */
         }
         .button-container {
-            display: flex; /* Alinea botones en una fila */
-            gap: 20px; /* Espacio entre botones */
+            display: flex; /* Alinea los botones en una fila */
+            gap: 50px; /* Espacio entre botones */
         }
         .panic-button, .breathing-button {
             width: 180px; /* Tamaño del botón */
@@ -76,6 +79,13 @@
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
+
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column; /* Cambia los botones a una columna en pantallas pequeñas */
+                gap: 30px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -88,13 +98,8 @@
                 <ul class="dropdown-menu">
                     <li><a onclick="location.href='/profile/'" class="dropdown-item">Mi Perfil</a></li>
                     <li><a onclick="location.href='/profile/edit/'" class="dropdown-item">Editar Perfil</a></li>
-                    <li><a class="dropdown-item" href="#">Síntomas</a></li>
-                    <li><a class="dropdown-item" href="#">Ayuda USM</a></li>
                 </ul>
             </div>
-            <button onclick="location.href='/saber_mas/'" class="btn btn-primary oval-button" type="button">Saber más</button>
-        </div>
-        <a href="{% url 'login' %}" class="logout">Cerrar Sesión</a>
     </header>
     <main class="main-content">
         <div class="button-container">
@@ -106,7 +111,3 @@
 </body>
 </html>
 {% endblock %}
-
-
-
-
