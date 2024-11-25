@@ -19,4 +19,5 @@ urlpatterns = [
     path('download-qr/', views.download_qr, name='download_qr'),
     path("saber_mas/", views.info, name="saber_mas" ),
     path("tutorial/", views.tut, name="tutorial"),
+    path('ejemplos/', views.ejemplos, name='ejemplos')
 ]
