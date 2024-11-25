@@ -23,33 +23,60 @@
             background-repeat: no-repeat;
         }
         .header {
-            background-color: #3535a4;
             color: white;
             text-align: center;
             padding: 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 40px; /* Pequeña separación adicional debajo de la barra */
+            margin-bottom: 40px; 
+            background: none; 
         }
+       
+        .header .btn-secondary {
+            background-color: #615757; 
+            color: rgba(253, 249, 249, 0.952); 
+            border: none; 
+            font-size: 1.2rem;
+        }
+        .header .dropdown-item {
+            color: white; 
+        }
+        .header .dropdown-item:hover {
+            background-color: #9500cc; 
+            color: white; 
+        }
+        .header .dropdown-menu {
+            background-color: #ffffff; 
+            color: rgb(0, 0, 0); 
+        }
+        .header .dropdown-item {
+            color: rgb(0, 0, 0); 
+        }
+        .header .dropdown-item:hover {
+            background-color: #ffd0dc; 
+            color: rgb(14, 14, 14); 
+        }
+        
         .main-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centra verticalmente los botones */
-            align-items: center; /* Centra horizontalmente los botones */
-            padding-top: 120px; /* Aumenta la separación desde la barra azul */
-            padding-bottom: 120px; /* Aumenta la separación hacia la parte blanca inferior */
+            justify-content: center; 
+            align-items: flex-start; 
+            padding-top: 120px; 
+            padding-bottom: 120px; 
+            padding-left: 50px;
         }
         .button-container {
-            display: flex; /* Alinea los botones en una fila */
-            gap: 50px; /* Espacio entre botones */
+            display: flex; 
+            justify-content: flex-start; 
         }
         .panic-button, .breathing-button {
-            width: 180px; /* Tamaño del botón */
-            height: 180px;
+            width: 220px; 
+            height: 220px;
             border-radius: 50%;
-            background-color: #b700ff;
+            background-color: #e86113;
             color: white;
             font-size: 1.5rem;
             font-weight: bold;
@@ -60,11 +87,12 @@
             align-items: center;
             text-align: center;
             transition: background-color 0.3s, transform 0.3s;
+            margin-right: 40px; 
         }
 
         .panic-button:hover, .breathing-button:hover {
-            background-color: #9500cc;
-            transform: scale(1.1); /* Animación de hover */
+            background-color: #cc2200;
+            transform: scale(1.1); 
         }
 
         .logout {
@@ -78,13 +106,6 @@
             cursor: pointer;
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            .button-container {
-                flex-direction: column; /* Cambia los botones a una columna en pantallas pequeñas */
-                gap: 30px;
-            }
         }
     </style>
 </head>
@@ -111,3 +132,6 @@
 </body>
 </html>
 {% endblock %}
+
+
+
