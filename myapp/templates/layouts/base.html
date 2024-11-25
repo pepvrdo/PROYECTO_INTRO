@@ -44,7 +44,7 @@
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home0' %}">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/sinfondo.png' %}" alt="" width="80" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +53,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home0' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'saber_mas' %}">Saber Más</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tutorial' %}">Tutorial</a> <!-- Botón agregado -->
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -77,6 +80,7 @@
             </div>
         </div>
     </nav>
+    
 
     <main>
         {% block content %}
@@ -150,4 +154,4 @@
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
-   
+

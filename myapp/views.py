@@ -117,4 +117,7 @@ def download_qr(request):
 def info(request):
     return render(request, "info.html")
 
+def tut(request):
+    return render(request, "tutorial.html")
+
 
