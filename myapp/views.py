@@ -120,4 +120,7 @@ def info(request):
 def tut(request):
     return render(request, "tutorial.html")
 
+def ejemplos(request):
+    return render(request, 'ejemplos.html')
+
 
