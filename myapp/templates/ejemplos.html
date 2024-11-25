@@ -1,46 +1,62 @@
 {% extends "layouts/base.html" %}
 {% block content %}
+<style>
+    .custom-margin-top {
+        margin-top: 2rem;
+    }
+    h1 {
+        color: #007BFF;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .copy-btn {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+    .copy-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
 <div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="container bg-white rounded shadow p-4">
+    <div class="container bg-white rounded shadow p-4 custom-margin-top">
         <h1 class="mb-4 text-center">Ejemplos de mensajes de ayuda</h1>
         <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+            {% for card in cards %}
             <div class="col d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Ejemplo 1</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Llamado al contacto de emergencia</h6>
-                        <p class="card-text">Hola, necesito que llames al número de telefono que aparece en tu pantalla. Si no contesta llama a este npumero: +569 1234 5678. Cuando contesten ek telefono diles que yo estoy sufriendo una crisis de pánico, ponlo en altavoz y dejame hablar con el, pues su voz ayuda a tranquilizarme.</p>
+                        <h5 class="card-title">{{ card.title }}</h5>
+                        <p class="card-text">{{ card.text }}</p>
+                        <button class="copy-btn" onclick="copyText(this)">Copiar texto</button>
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Ejemplo 2</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Pedir algo que necesite</h6>
-                        <p class="card-text">Hola, estoy actualmente pasando por una crisis de pánico, la mejor manera de poder ayudarme es que me traigas un vaso/botella con agua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Ejemplo 3</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Algún sonido/canción especial</h6>
-                        <p class="card-text">Hola me encuentro sufriendo una crisis de pánico, la única manera de poder relajarme es escuchando el sonido del mar. Por favor busca en Youtube sonidos del mar, llevame a un lugar con poco ruido y dejame escuchar ese sonido. Si tienes audifonos sería lo ideal.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Ejemplo 4</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Llevar a un lugar seguro</h6>
-                        <p class="card-text">Hola, actualmente estoy teniendo una crisis de pánico, te pido que por favor me lleves a un lugar con poco ruido y que tenga áreas verdes. La unica manera en la que me podría tranquilizar es estar un rato acostado en el pasto y respirando aire puro.</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
+<script>
+    function copyText(button) {
+
+        const cardText = button.parentElement.querySelector('.card-text').innerText;
+
+        navigator.clipboard.writeText(cardText)
+            .then(() => {
+                button.innerText = '¡Texto copiado!';
+                setTimeout(() => {
+                    button.innerText = 'Copiar texto';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+    }
+</script>
 {% endblock %}

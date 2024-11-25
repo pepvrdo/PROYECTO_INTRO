@@ -72,7 +72,7 @@
             display: flex; 
             justify-content: flex-start; 
         }
-        .panic-button, .breathing-button {
+        .panic-button {
             width: 220px; 
             height: 220px;
             border-radius: 50%;
@@ -90,8 +90,31 @@
             margin-right: 40px; 
         }
 
-        .panic-button:hover, .breathing-button:hover {
+        .breathing-button {
+            width: 220px; 
+            height: 220px;
+            border-radius: 50%;
+            background-color: #a16fdf;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-right: 40px; 
+        }
+
+        .panic-button:hover {
             background-color: #cc2200;
+            transform: scale(1.1); 
+        }
+
+        .breathing-button:hover {
+            background-color: #8d19aa;
             transform: scale(1.1); 
         }
 
@@ -117,14 +140,14 @@
                     <i class="bi bi-list"></i> Menú
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a onclick="location.href='/profile/'" class="dropdown-item">Mi Perfil</a></li>
-                    <li><a onclick="location.href='/profile/edit/'" class="dropdown-item">Editar Perfil</a></li>
+                    <li><a class="dropdown-item" href="/profile/">Mi Perfil</a></li>
+                    <li><a class="dropdown-item" href="/profile/edit">Editar Perfil</a></li>
                 </ul>
             </div>
     </header>
     <main class="main-content">
         <div class="button-container">
-            <button onclick="location.href='/qr-code/'" class="panic-button" aria-label="Botón de pánico">No me siento bien</button>
+            <button onclick="location.href='/qr-code/'" class="panic-button" aria-label="Botón de pánico">Necesito Ayuda</button>
             <button onclick="location.href='/respiracion/'" class="breathing-button" aria-label="Ejercicios de respiración">Ejercicios de respiración</button>
         </div>
     </main>

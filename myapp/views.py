@@ -121,6 +121,23 @@ def tut(request):
     return render(request, "tutorial.html")
 
 def ejemplos(request):
-    return render(request, 'ejemplos.html')
-
+    cards = [
+        {
+            "title": "Llamado al contacto de emergencia",
+            "text": "Hola, necesito que llames al número de telefono que aparece en tu pantalla. Si no contesta llama a este número: +569 1234 5678. Cuando contesten el teléfono diles que yo estoy sufriendo una crisis de pánico, ponlo en altavoz y déjame hablar con él, pues su voz ayuda a tranquilizarme."
+        },
+        {
+            "title": "Pedir algo que necesite",
+            "text": "Hola, estoy actualmente pasando por una crisis de pánico, la mejor manera de poder ayudarme es que me traigas un vaso/botella con agua."
+        },
+        {
+            "title": "Algún sonido/canción especial",
+            "text": "Hola, me encuentro sufriendo una crisis de pánico, la única manera de poder relajarme es escuchando el sonido del mar. Por favor busca en YouTube sonidos del mar, llévame a un lugar con poco ruido y déjame escuchar ese sonido. Si tienes audífonos sería lo ideal."
+        },
+        {
+            "title": "Llevar a un lugar seguro",
+            "text": "Hola, actualmente estoy teniendo una crisis de pánico, te pido que por favor me lleves a un lugar con poco ruido y que tenga áreas verdes. La única manera en la que me podría tranquilizar es estar un rato acostado en el pasto y respirando aire puro."
+        },
+    ]
+    return render(request, 'ejemplos.html', {'cards': cards})
 

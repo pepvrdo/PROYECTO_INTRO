@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - MindZen USM</title>
+    <title>Inicia Sesión en MindZen</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon-48x48.png' %}">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,33 +82,11 @@
             text-align: center;
             margin-top: 15px;
         }
-        .help-button {
-            position: fixed;
-            left: 40px;
-            bottom: 40px;
-            width: 60px;
-            height: 60px;
-            background-color: #a11e75;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease;
-        }
-        .help-button:hover {
-            background-color: #8994b1;
-        }
     </style>
 </head>
 <body>
     <div class="title">
-            <h1>MindZen USM</h1>
+            <h1>MindZen</h1>
     </div>
     <div class="container">
         {% if messages %}
@@ -128,6 +108,5 @@
             <a href="{% url 'register' %}"><button>Registrarse</button></a>
         </div>
     </div>
-    <button onclick="location.href='/about/'" class="help-button" aria-label="Ayuda">?</button>
 </body>
 </html>

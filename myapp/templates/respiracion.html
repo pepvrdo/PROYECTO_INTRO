@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respira</title>
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{% static 'images/favicon-48x48.png' %}">
 
     <style>
@@ -25,7 +23,7 @@
             height: 100px;
             background-color: #8ecae6;
             border-radius: 50%;
-            animation: breathe 8s infinite;
+            animation: breathe 10s infinite; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,7 +46,6 @@
             color: #023047;
         }
 
-        /* Botón verde */
         .better-button {
             position: fixed;
             top: 20px;
@@ -72,20 +69,20 @@
 </head>
 <body>
     <button class="better-button" onclick="window.location.href='/home/'">Ya me siento mejor</button>
-    <div class="text">Inhala... Exhala...</div>
+    <div class="text">Comencemos...</div>
     <div class="circle">Respira</div>
 
     <script>
         let circle = document.querySelector('.circle');
         let text = document.querySelector('.text');
-        let phases = ['Inhala', 'Sostén', 'Exhala', 'Sostén'];
+        let phases = ['Inhala', 'Manten', 'Exhala', 'Manten'];
 
         let phaseIndex = 0;
 
         setInterval(() => {
             text.textContent = phases[phaseIndex];
             phaseIndex = (phaseIndex + 1) % phases.length;
-        }, 2000);
+        }, 2500); 
     </script>
 </body>
 </html>

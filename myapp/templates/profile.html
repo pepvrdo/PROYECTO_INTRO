@@ -23,12 +23,12 @@
             right: 0;
             z-index: 1030;
         }
-        /* Aumentar separación entre navbar y contenido */
+
         .container {
             max-width: 100%;
             padding-left: 15px;
             padding-right: 15px;
-            margin-top: 3%;  /* Ajusta la separación según lo que necesites */
+            margin-top: 3%; 
         }
 
         .profile-container {
@@ -120,11 +120,14 @@
                     <p><strong>Mensaje de ayuda:</strong> {{ perfil.texto }}</p>
                     <div class="mt-4">
                         <a href="{% url 'edit_profile' %}" class="btn btn-primary">Editar Perfil</a>
-                        <a href="{% url 'home0' %}" class="btn btn-secondary">Volver al Inicio</a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Volver al Inicio</a>
                     </div>
                 </div>
                 <div class="qr-section">
                     <h2>Descarga tu Código QR</h2>
+                    <div class="qr-code">
+                        <img src="{{ perfil.qr_code }}" alt="Código QR de emergencia">
+                    </div>
                     <a href="{% url 'download_qr' %}" class="btn btn-success mt-4">Descargar QR</a>
                 </div>
             </div>

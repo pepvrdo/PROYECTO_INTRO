@@ -24,26 +24,27 @@
 
         .blur-container {
             backdrop-filter: blur(8px);
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             width: 80%;
             margin: auto;
-            margin-top: 100px; 
+            margin-top: 100px;
             text-align: center;
         }
         .navbar-logo {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease; 
         }
         .navbar-logo:hover {
-            transform: scale(1.1);
+            transform: scale(1.1); 
         }
+
   </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="navbar-brand" href="{% url 'home0' %}">
                 <img src="{% static 'images/sinfondo.png' %}" alt="" width="80" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home0' %}">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'saber_mas' %}">Saber Más</a>
@@ -79,51 +80,58 @@
             </div>
         </div>
     </nav>
-    
 
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    <div style="margin-bottom: 50px;"></div>
-    <footer class="text-center text-lg-start bg-light text-muted">
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>MindZen
-                        </h6>
-                        <p style="text-align: left;">
-                            Los ataques de pánico pueden causar mucho temor, sobre todo en niños, niñas y adolescentes, pero se pueden controlar mediante tratamiento. Es importante saber que un ataque de pánico no causa ningún daño y que la sensación pasará, aunque no lo parezca mientras está sucediendo.
-                        </p>
-                    </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Links de Interés:
-                        </h6>
-                        <p>
-                            <a class="text-reset" href="https://www.cokitos.com/tag/juegos-relajantes/">Juegos AntiStress</a>
-                        </p>
-                        <p>
-                            <a class="text-reset" href="https://www.unicef.org/elsalvador/historias/ataques-de-panico">Crisis de Pánico UNICEF</a>
-                        </p>
-                        <p>
-                            <a class="text-reset" href="https://www.cigna.com/es-us/knowledge-center/hw/cmo-ayudar-a-alguien-durante-un-ataque-de-pnico-hw53602#:~:text=H%C3%A1blele%20a%20la%20persona%20con,por%20encima%20de%20la%20cabeza.">Cómo ayudar a alguien durante un ataque de pánico</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">Quiénes llevamos a cabo este proyecto:</h6>
-                        <p>Mateo Cisternas</p>
-                        <p>Andrea Cortés</p>
-                        <p>Pedro Cruz</p>
-                        <p>Maximiliano Darvich</p>
-                    </div>
+   <div style="margin-bottom: 5%"></div>
+<footer class="text-center text-lg-start bg-light text-muted">
+    <section class="">
+        <div class="container text-center text-md-start py-5">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-2"></i>MindZen
+                    </h6>
+                    <p class="text-justify">
+                        Los ataques de pánico pueden causar mucho temor, sobre todo en niños, niñas y adolescentes, pero se pueden controlar mediante tratamiento. Es importante saber que un ataque de pánico no causa ningún daño y que la sensación pasará, aunque no lo parezca mientras está sucediendo.
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Links de Interés:</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <a class="text-reset" href="https://www.cokitos.com/tag/juegos-relajantes/">Juegos AntiStress</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a class="text-reset" href="https://www.unicef.org/elsalvador/historias/ataques-de-panico">Crisis de Pánico UNICEF</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a class="text-reset" href="https://www.cigna.com/es-us/knowledge-center/hw/cmo-ayudar-a-alguien-durante-un-ataque-de-pnico-hw53602#:~:text=H%C3%A1blele%20a%20la%20persona%20con,por%20encima%20de%20la%20cabeza.">Cómo ayudar a alguien durante un ataque de pánico</a>
+                            </p> 
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Desarrolladores del proyecto:</h6>
+                    <ul class="list-unstyled">
+                        <li>Mateo Cisternas</li>
+                        <li>Andrea Cortés</li>
+                        <li>Pedro Cruz</li>
+                        <li>Maximiliano Darvich</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2024 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
-
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+</footer>
